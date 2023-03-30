@@ -1,0 +1,39 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - master
+      - '*.x'
+  pull_request:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  stub-tests:
+    runs-on: ubuntu-22.04
+
+    strategy:
+      fail-fast: true
+
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          extensions: dom, curl, libxml, mbstring, zip
+          ini-values: error_reporting=E_ALL
+          tools: composer:v2
+          coverage: none
+
+      - name: Setup Laravel
+        run: |
+          composer create-project laravel/laravel
+          composer require xaisyndicatelab/xsimarket:@dev --no-interaction --no-update
+          composer config repositories.xsimarket '{"type": "path", "url": "xsimarket"}' --file composer.json
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          path: 'xsimarket'
+          
