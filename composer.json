@@ -1,20 +1,23 @@
 {
     "name": "xaisyndicatelab/xsimarket",
-    "description": "A complete ecommerce api solution with both REST and GraphQL support.",
+    "description": "A complete ecommerce API's solution with both REST and GraphQL support.",
     "license": "MIT",
     "authors": [
         {
-            "name": "Xai Syndicate Internasional",
+            "name": "xaisyndicatelab",
             "email": "opensource@xaisyndicate.co.id",
-            "homepage": "https://xaisyndicate.co.id"
+            "homepage": "https://www.xaisyndicate.co.id"
         }
     ],
     "homepage": "https://github.com/xaisyndicatelab/xsimarket",
     "keywords": [
-        "Laravel",
+        "Api",
+        "GraphQL",
+        "Ecommerce",
         "Marketplace",
-        "Digital",
-        "Shop"
+        "Laravel",
+        "Rest API",
+        "Laravel Package"
     ],
     "require": {
         "illuminate/support": "10.5.1",
